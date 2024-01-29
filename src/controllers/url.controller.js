@@ -13,7 +13,7 @@ export const Getall = async (req, res) => {
 export const GetOne = async (req, res) => {
   try {
     const shortUrl = await Url.findOne({
-      shortUrl: `https://api-links-8imez43ek-antonig5.vercel.app/api/${req.params.id}`,
+      shortUrl: `https://api-link-pwcl.onrender.com/api/${req.params.id}`,
     });
     if (shortUrl) {
       res.redirect(shortUrl.url);
@@ -29,7 +29,7 @@ export const CreatedShotLink = async (req, res) => {
   const { url, custom } = req.body;
   try {
     const id = custom || nanoid(6);
-    const shortUrl = `https://api-links-8imez43ek-antonig5.vercel.app/api/${id}`;
+    const shortUrl = `https://api-link-pwcl.onrender.com/api/${id}`;
 
     const newUrl = new Url({
       url: url,

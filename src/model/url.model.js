@@ -8,7 +8,7 @@ const UrlSchema = new Schema({
   shortUrl: {
     type: String,
     required: true,
-    default: "https://api-links-8imez43ek-antonig5.vercel.app/api",
+    default: "https://api-link-pwcl.onrender.com/api",
   },
   created: {
     type: Date,
