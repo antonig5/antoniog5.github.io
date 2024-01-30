@@ -77,7 +77,13 @@ export const VerifyUrl = async (req, res) => {
       }),
     });
     const data = await response.json();
-    res.json({ data: data });
+    if (Object.keys(data).length === 0) {
+      res.json({
+        message: "No se encontraron amenazas para la URL proporcionada",
+      });
+    } else {
+      res.json({ message: data });
+    }
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
